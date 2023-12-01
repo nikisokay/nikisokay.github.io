@@ -86,38 +86,25 @@ const getSalad = async () => {
     return randomSalad
 }
 
-const createSlider = () => {
-    var elem = document.querySelector('.main-carousel');
-    var flkty = new Flickity( elem, {
-    wrapAround: true,
-    cellAlign: 'center',
-    lazyLoad: true,
-    contain: true
-    });
-}
-
 const createSoup = async () => {
     let soup = document.getElementById('soup')
     document.getElementById("soup-container").classList.add("view");
-    soup.innerHTML = ""
     let soupFood = await getSoup();
-    soup.innerHTML += soupFood;
+    soup.innerHTML = soupFood;
 }
 
 const createMain = async () => {
     let soup = document.getElementById('main')
     document.getElementById("main-container").classList.add("view");
-    soup.innerHTML = "";
     let mainFood = await getMain();
-    soup.innerHTML += mainFood
+    soup.innerHTML = mainFood
 }
 
 const createSalad = async () => {
     let soup = document.getElementById('salad')
     document.getElementById("salad-container").classList.add("view");
-    soup.innerHTML = ""
     let saladFood = await getSalad();
-    soup.innerHTML += saladFood
+    soup.innerHTML = saladFood
 }
 
 const createAll = () => {
@@ -128,4 +115,13 @@ const createAll = () => {
 
 printFood();
 
+const createSlider = () => {
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity( elem, {
+    wrapAround: true,
+    cellAlign: 'center',
+    lazyLoad: true,
+    contain: true
+    });
+}
 createSlider();
