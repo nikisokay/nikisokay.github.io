@@ -186,19 +186,19 @@ details summary:focus ~ * {
     border-radius: 87px;
 }
 
-.previous{
+.previous-btn{
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 250px;
-    margin: 0 auto;
+    margin-top: 0 auto;
     height: 30px;
     background-color: #3C78D2;
     border-radius: 84px;
 
 }
 
-.previous a{
+.previous-btn a{
     text-decoration: none;
     font-size: 30px;
     font-family: 'Lobster', sans-serif;
@@ -209,6 +209,12 @@ details summary:focus ~ * {
     margin-bottom: 30px;
 }
 
+.food-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .food-list-item{
     display: flex;
     flex-direction: column;
@@ -216,7 +222,6 @@ details summary:focus ~ * {
 }
 
 .foodItem{
-    margin-left: 5px;
     margin-bottom: 3px;
 }
 
