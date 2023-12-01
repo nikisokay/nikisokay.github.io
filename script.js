@@ -19,7 +19,8 @@ const createSlider = () => {
     var elem = document.querySelector('.main-carousel');
     var flkty = new Flickity( elem, {
     wrapAround: true,
-    // cellAlign: 'center',
+    cellAlign: 'center',
+    lazyLoad: true,
     contain: true
     });
 
