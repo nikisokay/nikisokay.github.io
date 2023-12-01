@@ -1,3 +1,7 @@
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 const fetchFood = async () => {
 
     let food = await fetch("food.json", {
@@ -10,9 +14,35 @@ const fetchFood = async () => {
     return result
 }
 
-const getFood = async () => {
-    let food = await fetchFood()
-    console.log(food.garnirs.length)
+const getGarnir = async () => {
+    let food = await fetchFood();
+    let garnirs = food.garnirs;
+    let garnirsLen = food.garnirs.length - 1;
+    let randomGarnir = garnirs[getRandomInt(garnirsLen)]["garnir"];
+    return randomGarnir
+}
+
+const getMeat = async () => {
+    let food = await fetchFood();
+    let meats = food.meats;
+    let meatsLen = food.meats.length - 1;
+    let randomMeat = meats[getRandomInt(meatsLen)]["meat"];
+    return randomMeat
+}
+
+const getMain = async () => {
+    let meat = await getMeat();
+    let garnir = await getGarnir();
+    let mainFood = garnir + " + " + meat;
+    return mainFood;
+}
+
+const getSoup = async () => {
+    let food = await fetchFood();
+    let soups = food.soups;
+    let soupsLen = food.soups.length - 1;
+    let randomSoup = soups[getRandomInt(soupsLen)]["soup"];
+    return randomSoup
 }
 
 const createSlider = () => {
@@ -25,21 +55,23 @@ const createSlider = () => {
     });
 }
 
-const createSoup = () => {
+const createSoup = async () => {
     let soup = document.getElementById('soup')
     document.getElementById("soup-container").classList.add("view");
     soup.innerHTML = ""
-    soup.innerHTML += "супчик"
+    let soupFood = await getSoup();
+    soup.innerHTML += soupFood;
 }
 
-const createMain = () => {
+const createMain = async () => {
     let soup = document.getElementById('main')
     document.getElementById("main-container").classList.add("view");
-    soup.innerHTML = ""
-    soup.innerHTML += "супчик"
+    soup.innerHTML = "";
+    let mainFood = await getMain();
+    soup.innerHTML += mainFood
 }
 
-const createSalad = () => {
+const createSalad = async () => {
     let soup = document.getElementById('salad')
     document.getElementById("salad-container").classList.add("view");
     soup.innerHTML = ""
@@ -53,4 +85,3 @@ const createAll = () => {
 }
 
 createSlider();
-getFood()
