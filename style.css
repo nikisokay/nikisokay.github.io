@@ -138,7 +138,6 @@ details summary:focus ~ * {
 
 }
 
-
 .carousel-cell {
     display: flex;
     justify-content: center;
@@ -185,5 +184,39 @@ details summary:focus ~ * {
     color: #fff;
     background-color: #3C78D2;
     border-radius: 87px;
+}
+
+.previous{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin: 0 auto;
+    height: 30px;
+    background-color: #3C78D2;
+    border-radius: 84px;
+
+}
+
+.previous a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Lobster', sans-serif;
+    color: #fff;
+}
+
+.food-list{
+    margin-bottom: 30px;
+}
+
+.food-list-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.foodItem{
+    margin-left: 5px;
+    margin-bottom: 3px;
 }
 

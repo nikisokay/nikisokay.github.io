@@ -14,6 +14,39 @@ const fetchFood = async () => {
     return result
 }
 
+const printFood = async () => {
+    let food = await fetchFood();
+
+    let garnirContainer = document.getElementById("garnirs")
+    let foodType = food.garnirs;
+    foodType = Object.values(foodType);
+    Object.keys(foodType).map(function (key) {
+        garnirContainer.innerHTML += `<span class="foodItem">${foodType[key]["garnir"]}</span>`
+    });
+
+    let meatContainer = document.getElementById("meats");
+    foodType = food.meats;
+    foodType = Object.values(foodType);
+    Object.keys(foodType).map(function (key) {
+        meatContainer.innerHTML += `<span class="foodItem">${foodType[key]["meat"]}</span>`
+    });
+
+    let saladContainer = document.getElementById("salads");
+    foodType = food.salads;
+    foodType = Object.values(foodType);
+    Object.keys(foodType).map(function (key) {
+        saladContainer.innerHTML += `<span class="foodItem">${foodType[key]["salad"]}</span>`
+    });
+
+    let soupContainer = document.getElementById("soups");
+    foodType = food.soups;
+    foodType = Object.values(foodType);
+    Object.keys(foodType).map(function (key) {
+        soupContainer.innerHTML += `<span class="foodItem">${foodType[key]["soup"]}</span>`
+    });
+
+}
+
 const getGarnir = async () => {
     let food = await fetchFood();
     let garnirs = food.garnirs;
@@ -43,6 +76,14 @@ const getSoup = async () => {
     let soupsLen = food.soups.length - 1;
     let randomSoup = soups[getRandomInt(soupsLen)]["soup"];
     return randomSoup
+}
+
+const getSalad = async () => {
+    let food = await fetchFood();
+    let salads = food.salads;
+    let saladsLen = salads.length - 1;
+    let randomSalad = salads[getRandomInt(saladsLen)]["salad"];
+    return randomSalad
 }
 
 const createSlider = () => {
@@ -75,7 +116,8 @@ const createSalad = async () => {
     let soup = document.getElementById('salad')
     document.getElementById("salad-container").classList.add("view");
     soup.innerHTML = ""
-    soup.innerHTML += "супчик"
+    let saladFood = await getSalad();
+    soup.innerHTML += saladFood
 }
 
 const createAll = () => {
@@ -83,5 +125,7 @@ const createAll = () => {
     createMain();
     createSoup();
 }
+
+printFood();
 
 createSlider();
