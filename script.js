@@ -23,8 +23,33 @@ const createSlider = () => {
     lazyLoad: true,
     contain: true
     });
+}
 
+const createSoup = () => {
+    let soup = document.getElementById('soup')
+    document.getElementById("soup-container").classList.add("view");
+    soup.innerHTML = ""
+    soup.innerHTML += "супчик"
+}
 
+const createMain = () => {
+    let soup = document.getElementById('main')
+    document.getElementById("main-container").classList.add("view");
+    soup.innerHTML = ""
+    soup.innerHTML += "супчик"
+}
+
+const createSalad = () => {
+    let soup = document.getElementById('salad')
+    document.getElementById("salad-container").classList.add("view");
+    soup.innerHTML = ""
+    soup.innerHTML += "супчик"
+}
+
+const createAll = () => {
+    createSalad();
+    createMain();
+    createSoup();
 }
 
 createSlider();

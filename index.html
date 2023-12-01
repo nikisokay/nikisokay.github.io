@@ -13,28 +13,77 @@
 </head>
 <body>
 
-    <h1>hello world</h1>
 
+    <div class="food_choice_hello">
+        <h1>Выбор еды</h1>
+    </div>
+
+    <div class="instruction">
+        <h2>Инструкция:</h2>
+
+        <div class="instruction-content">
+            <details>
+                <summary><span>Как выбрать?</span></summary>
+                <p>Чтобы выбрать нажмите на синий прямоугольник с необходимым названием</p>    
+            </details>
+
+            <details>
+                <summary><span>Как менять выбираемое блюдо?</span></summary>
+                <p>Для перелистывания нажимайте на круглые кнопки по бокам</p>
+
+            </details>
+
+            <details>
+                <summary><span>Как выбрать заново, если не устраивает результат?</span></summary>
+                <p>Просто нажмите еще раз<</p>
+            </details>
+        </div>
+
+    </div>
 
     <div class="main-carousel">
 
-        <div class="carousel-cell">
-            <span>выбрать первое</span>
+        <div class="carousel-cell" onclick="createSoup()">
+            <span class="chose chose_soup">Выбрать первое</span>
         </div>
 
-        <div class="carousel-cell">
-            <span>выбрать второе</span>
+        <div class="carousel-cell" onclick="createMain()">
+            <span class="chose chose_main">Выбрать второе</span>
         </div>
 
-        <div class="carousel-cell">
-            <span>выбрать салат</span>
+        <div class="carousel-cell" onclick="createSalad()">
+            <span class="chose chose_salad">Выбрать салат</span>
         </div>
 
-        <div class="carousel-cell">
-            <span>выбрать всё</span>
+        <div class="carousel-cell" onclick="createAll()">
+            <span class="chose chose_all">Выбрать всё</span>
         </div>
        
     </div>
+
+    <div class="food-container" id="soup-container">
+        <h2>Первое:</h2>
+        <span class="food" id="soup">
+
+        </span>
+    </div>
+
+    <div class="food-container" id="main-container">
+        <h2>Второе:</h2>
+        <span class="food" id="main">
+
+        </span>
+    </div>
+
+    <div class="food-container" id="salad-container">
+        <h2>Салат:</h2>
+        <span class="food" id="salad">
+
+        </span>
+    </div>
+
+
+    
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script type="text/javascript" src="food.json"></script>
