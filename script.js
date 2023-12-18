@@ -50,7 +50,7 @@ const printFood = async () => {
 const getGarnir = async () => {
     let food = await fetchFood();
     let garnirs = food.garnirs;
-    let garnirsLen = food.garnirs.length - 1;
+    let garnirsLen = food.garnirs.length;
     let randomGarnir = garnirs[getRandomInt(garnirsLen)]["garnir"];
     return randomGarnir
 }
@@ -58,7 +58,7 @@ const getGarnir = async () => {
 const getMeat = async () => {
     let food = await fetchFood();
     let meats = food.meats;
-    let meatsLen = food.meats.length - 1;
+    let meatsLen = food.meats.length;
     let randomMeat = meats[getRandomInt(meatsLen)]["meat"];
     return randomMeat
 }
@@ -73,7 +73,7 @@ const getMain = async () => {
 const getSoup = async () => {
     let food = await fetchFood();
     let soups = food.soups;
-    let soupsLen = food.soups.length - 1;
+    let soupsLen = food.soups.length;
     let randomSoup = soups[getRandomInt(soupsLen)]["soup"];
     return randomSoup
 }
@@ -81,7 +81,7 @@ const getSoup = async () => {
 const getSalad = async () => {
     let food = await fetchFood();
     let salads = food.salads;
-    let saladsLen = salads.length - 1;
+    let saladsLen = salads.length;
     let randomSalad = salads[getRandomInt(saladsLen)]["salad"];
     return randomSalad
 }
